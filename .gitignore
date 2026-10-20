@@ -1,0 +1,14 @@
+# Frameshift -- source-only tracking
+# Ignore everything by default, unignore only source code.
+
+/*
+!/.gitignore
+!/Github/
+/Github/*
+!/Github/*.java
+!/Github/backup/
+/Github/backup/*
+!/Github/backup/*.java
+!/AminoCode.py
+!/AnimonCode.py
+!/AnimonCode-1.py
