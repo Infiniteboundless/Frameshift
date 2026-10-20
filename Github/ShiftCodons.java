@@ -6,8 +6,10 @@ ShiftCodons.java version 2.2.001
 
 import java.io.*;
 import java.util.*;
+// GRENZEN { 1d146b44 ShiftCodons
 public class ShiftCodons
 {
+// GRENZEN { 0a177bd0 ShiftCodons.main
 public static void main(String[] args)
 {
 try
@@ -509,8 +511,10 @@ try
 		e.printStackTrace();
 		}
 	}
+// } GRENZEN 0a177bd0
 
 }
+// } GRENZEN 1d146b44
 /*
 ==============================================================
 This software is released under GNU/GPL license

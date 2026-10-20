@@ -7,8 +7,10 @@ CodonPair.java version 2.1.001
 import java.io.*;
 //import java.util.*;
 
+// GRENZEN { a037f446 CodonPair
 public class CodonPair
 {
+// GRENZEN { 7b167648 CodonPair.main
 	public static void main(String args[])
 	{
 	try
@@ -211,8 +213,10 @@ public class CodonPair
 			e.printStackTrace();
 			}
 	}
+// } GRENZEN 7b167648
 
 
+// GRENZEN { 64416cf2 CodonPair.MatrixIndex
 	public static int MatrixIndex(String a)
 	{   int c;
 		switch(a)
@@ -241,8 +245,10 @@ public class CodonPair
 		}
 		return c; 	
 	}
+// } GRENZEN 64416cf2
 
 }
+// } GRENZEN a037f446
 /*
 ==============================================================
 This software is released under GNU/GPL license

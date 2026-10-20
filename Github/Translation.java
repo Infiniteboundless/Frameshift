@@ -13,8 +13,10 @@ The "translateReadthrough" function translate CDSs using the standard genetic co
 import java.io.*;
 //import java.util.*;
 
+// GRENZEN { ca2991aa Translation
 public class Translation
 {
+// GRENZEN { daee0156 Translation.translateReadthrough
 public static String translateReadthrough(String codon)
 {
 	String amino="";
@@ -211,6 +213,8 @@ public static String translateReadthrough(String codon)
 
 	return amino;
 }
+// GRENZEN { 3effbddd Translation.translate
+// } GRENZEN daee0156
 public static String translate(String codon)
 {
 	String amino="";
@@ -407,8 +411,10 @@ public static String translate(String codon)
 	}
 	return amino;
 } 
+// } GRENZEN 3effbddd
   
 }
+// } GRENZEN ca2991aa
  
  /*
 ==============================================================

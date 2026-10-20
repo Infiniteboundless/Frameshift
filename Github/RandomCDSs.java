@@ -7,8 +7,10 @@ RandomCDSs.java version 2.1.001
 import java.io.*;
 //import java.util.*;
 
+// GRENZEN { d919bc93 RandomCDSs
 public class RandomCDSs
 {
+// GRENZEN { 3dd17bdb RandomCDSs.main
 public static void main(String args[])
 {
 	try
@@ -136,8 +138,10 @@ public static void main(String args[])
 			e.printStackTrace();
 		}
 	}
+// } GRENZEN 3dd17bdb
 
 }
+// } GRENZEN d919bc93
 /*
 ==============================================================
 This software is released under GNU/GPL license

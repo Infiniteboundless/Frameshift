@@ -7,8 +7,10 @@ FrameTranslation.java version 2.1.001
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { b9a46fdf FrameTranslation
 public class FrameTranslation
 {
+// GRENZEN { 1865b49f FrameTranslation.main
 public static void main(String args[])
 {
 	try
@@ -232,13 +234,17 @@ public static void main(String args[])
 		e.printStackTrace(); 
 	}
 }
+// } GRENZEN 1865b49f
 	
+// GRENZEN { 7db0d38c FrameTranslation.countOf
 public static int countOf (String s, String c) 
 {
  return (s.length() - s.replace(c, "").length()); 
 }
+// } GRENZEN 7db0d38c
 
 }
+// } GRENZEN b9a46fdf
 /*
  ==============================================================
 This software is released under GNU/GPL license

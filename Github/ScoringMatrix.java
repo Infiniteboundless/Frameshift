@@ -16,8 +16,10 @@ int [][][] sMat=new int[100][22][22]; //The scores of the scoring matrices
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { eb3519d0 ScoringMatrix
 public class ScoringMatrix
 {
+// GRENZEN { 12ff9921 ScoringMatrix.readMatrix
 public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) throws Exception 
 {
 	
@@ -153,7 +155,9 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 	
 	return nSM; 
 }
+// } GRENZEN 12ff9921
 }
+// } GRENZEN eb3519d0
  /*
 ==============================================================
 This software is released under GNU/GPL license

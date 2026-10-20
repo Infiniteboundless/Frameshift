@@ -7,8 +7,10 @@ SubScore.java version 2.1.001
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { 09003f05 SubScore
 public class SubScore
 {
+// GRENZEN { bad8d564 SubScore.main
 public static void main(String args[])
 {
 	try
@@ -705,13 +707,17 @@ public static void main(String args[])
 		e.printStackTrace(); 
 	}
 }
+// } GRENZEN bad8d564
 	
+// GRENZEN { 981e4537 SubScore.countOf
 public static int countOf (String s, String c) 
 {
  return (s.length() - s.replace(c, "").length()); 
 }
+// } GRENZEN 981e4537
 
 }
+// } GRENZEN 09003f05
 /*
  ==============================================================
 This software is released under GNU/GPL license

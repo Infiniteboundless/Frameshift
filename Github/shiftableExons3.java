@@ -7,6 +7,7 @@ shiftableExons.java version 2.0.001
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { 213c777a shiftableExons3
 public class shiftableExons3
 {
 	public static String[] refmRNAID = new String[1000001]; 
@@ -42,6 +43,7 @@ public class shiftableExons3
 	public static int nBlastp; 
 	public static int nExons; 
 
+// GRENZEN { 30d5791e shiftableExons3.main
 public static void main(String args[]) throws Exception
 {
 	System.out.println("\n Find shiftable exons and compute their similarities.\n"); 
@@ -228,7 +230,9 @@ public static void main(String args[]) throws Exception
 		System.out.println("\n\t\t No Asymmetric Exons were found. This does not mean there is no Asymmetric Exons in "+Species+", most probably, there is not enough data (proteins, mRNA isoforms, and exon sequences) available."); 		
 	}	
 }
+// } GRENZEN 30d5791e
 
+// GRENZEN { 9715df1e shiftableExons3.validated
 public static boolean validated(String clustalwAlignment) throws Exception
 {	
 	System.out.println("... Reading clustalw Alignment: "+clustalwAlignment+"\n"); 
@@ -333,7 +337,9 @@ public static boolean validated(String clustalwAlignment) throws Exception
 	}
 	return hasAsymmetricExon;
 }
+// } GRENZEN 9715df1e
 
+// GRENZEN { 33577c5f shiftableExons3.GapisAsymmetricExon
 public static boolean GapisAsymmetricExon(int g) throws Exception
 {
 	System.out.println("... testing gaps in sequence "+g+".\n");
@@ -383,7 +389,9 @@ public static boolean GapisAsymmetricExon(int g) throws Exception
 	}
 	return isAsymmetricExon;	
 }
+// } GRENZEN 33577c5f
 
+// GRENZEN { b3684c75 shiftableExons3.parseGaps
 public static void parseGaps(int g) throws Exception
 {
 	System.out.println("... parsing Gaps in sequence "+g+".\n");
@@ -420,7 +428,9 @@ public static void parseGaps(int g) throws Exception
 		}
 	}
 }
+// } GRENZEN b3684c75
 
+// GRENZEN { c36ddd4c shiftableExons3.parseExons
 public static void parseExons(String thismRNAID) throws Exception
 {
 	System.out.println("... parsing exons for " + thismRNAID);
@@ -464,7 +474,9 @@ public static void parseExons(String thismRNAID) throws Exception
 	
 	bwEnsemblExons.close();	
 }
+// } GRENZEN c36ddd4c
 
+// GRENZEN { 334684ce shiftableExons3.readRefmRNASeqFile
 public static void readRefmRNASeqFile() throws Exception
 {
 	//==========================================================		
@@ -537,7 +549,9 @@ public static void readRefmRNASeqFile() throws Exception
 	br.close(); 
 	
 }
+// } GRENZEN 334684ce
 		
+// GRENZEN { da3f0299 shiftableExons3.readEnsmRNASeqFile
 public static void readEnsmRNASeqFile() throws Exception
 {
 	System.out.println("... Reading Ensembl mRNA sequences: "+path+"/"+mRNASeqFile+"\n"); 
@@ -593,7 +607,9 @@ public static void readEnsmRNASeqFile() throws Exception
 	}
 	br.close();  		
 }
+// } GRENZEN da3f0299
 
+// GRENZEN { 20d97f79 shiftableExons3.readExonFile
 public static void readExonFile() throws Exception
 {
 	//=================================
@@ -655,7 +671,9 @@ public static void readExonFile() throws Exception
 	br.close(); 
 	
 }
+// } GRENZEN 20d97f79
 
+// GRENZEN { 73d7d5b7 shiftableExons3.readBlastpFile
 public static void readBlastpFile() throws Exception
 {
 	//=====================================================================		
@@ -765,7 +783,9 @@ public static void readBlastpFile() throws Exception
 	brBlastpFile.close(); 
 	bwClearBlastp.close();
 }
+// } GRENZEN 73d7d5b7
 }
+// } GRENZEN 213c777a
 	
 	//==========================================================		
 	// ... Source data must be downloaded from Ensembl Biomart

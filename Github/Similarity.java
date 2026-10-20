@@ -7,8 +7,10 @@ Similarity.java version 2.1.001
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { 2a2720aa Similarity
 public class Similarity
 {
+// GRENZEN { 8c56d925 Similarity.main
 public static void main(String args[])
 {
 	try
@@ -751,13 +753,17 @@ public static void main(String args[])
 		e.printStackTrace(); 
 	}
 }
+// } GRENZEN 8c56d925
 	
+// GRENZEN { ab67defc Similarity.countOf
 public static int countOf (String s, String c) 
 {
  return (s.length() - s.replace(c, "").length()); 
 }
+// } GRENZEN ab67defc
 
 }
+// } GRENZEN 2a2720aa
 /*
  ==============================================================
 This software is released under GNU/GPL license
