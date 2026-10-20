@@ -79,7 +79,7 @@ public static void main(String[] args) throws Exception
 	if (args.length != 6)
 	{
 		System.out.println("\n\t Input error! "); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	args[0] = args[0].toLowerCase().replace("real", "1").replace("uniform", "2").replace("normal", "3"); 
@@ -129,7 +129,7 @@ public static void main(String[] args) throws Exception
 	if (dType <1||dType>3||nRept <1||nRept>100||nCode <100||nCode>10000000||nSwap <1||nSwap>1000||Start <1||Start>nAP||End <1||End>nAP||Start>End)
 	{
 		System.out.println("\n\t Input error! "); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	System.out.println("\n\t Parameters accepted: "); 
@@ -368,7 +368,7 @@ public static void main(String[] args) throws Exception
 		{
 			System.out.println("\n\t Program exit because there are too many tasks.\n\t Please change the inputs to reduce the number of tasks to less than 60000 tasks.\n Otherwise, the computation time may be too long (up to months)."); 
 			
-			System.exit(0); 			
+			System.exit(1); 			
 		}
 										
 		//===================================================================

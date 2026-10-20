@@ -44,7 +44,7 @@ public static void main(String[] args) throws Exception
 	if (args.length<4||N<1||N>10000000||S>nSM||S<1||R<1||R>10000)
 	{
 		System.out.println("\n Wrong parameter!"); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	System.out.println("Using scoring matrix "+S+": "+M[S]);

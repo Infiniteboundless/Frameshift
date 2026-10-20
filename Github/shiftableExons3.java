@@ -54,7 +54,7 @@ public static void main(String args[]) throws Exception
 		System.out.println("\n Usage: shiftableExons <Species> <Path> <Blastp> <refmRNASeqFile> <mRNASeqFile> <exonFile> \n"); 
 		System.out.println("\n Reference mRNA Sequence File, Ensembl mRNA Sequence File and exons files must be in fasta format.\n"); 
 		System.out.println("\n Blastp results must be in table format (Blastp output format 6).\n"); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	//=================================		
@@ -181,7 +181,7 @@ public static void main(String args[]) throws Exception
 						if (exitCode !=0) 
 						{
 							System.err.println("\n Clustalw ERROR! (exit code:" + exitCode+")\n"); 
-							System.exit(0); 
+							System.exit(1); 
 						} 
 						else 
 						{
@@ -769,7 +769,7 @@ public static void readBlastpFile() throws Exception
 			System.out.println("Please download the protein sequence file with a short head information, no more than 6 seperators, including:");
 			System.out.println(">Gene stable ID|Transcript stable ID| Gene name|UniParc ID|UniProtKB/Swiss-Prot ID|UniProtKB/TrEMBL ID|Protein stable ID");
 			
-			System.exit(0);
+			System.exit(1);
 		}
 		
 	}

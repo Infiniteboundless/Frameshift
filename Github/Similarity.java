@@ -17,7 +17,7 @@ public static void main(String args[])
 	{
 		System.out.println("\n Batch translate CDSs in the three different reading frames in the sense strand, and compute their frameshift or random similarities, by aligning or not.\n"); 
 		System.out.println("\n Usage: Similarity <Path> <CDS file> <[readthrough=]Yes/No> <[SeqType=]Frameshift/Random> <CLUSTALW/MSA/FrameAlign> \n"); 
-		if (args.length!=5)	{System.exit(0); }
+		if (args.length!=5)	{System.exit(1); }
 		
 		Translation Trobj = new Translation(); 
 
@@ -79,7 +79,7 @@ public static void main(String args[])
 		else
 		{
 			System.out.println("\n Wrong args input: "+SeqType); 
-			System.exit(0); 
+			System.exit(1); 
 		}
 
 	 	String SimilarityFile = path + "/" + CDSfile + "." + ReadThrough + "." + Aligner+"."+SeqType+".Similarities.txt"; 
@@ -313,7 +313,7 @@ public static void main(String args[])
 				else 
 				{
 					System.err.println("\n Clustalw Alignment ERROR! (Error Number:" + exitCode+")\n"); 
-					System.exit(0); 
+					System.exit(1); 
 				}
 		
 			}

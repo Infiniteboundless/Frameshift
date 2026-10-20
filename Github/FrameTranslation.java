@@ -18,7 +18,7 @@ public static void main(String args[])
 		System.out.println("\n Batch translate CDSs in the three different reading frames in the sense strand, and compute their frameshift or random similarities, by aligning or not.\n"); 
 		System.out.println("\n Usage: FrameTranslation <Path> <CDS file> <[readthrough=]Yes/No> \n"); 
 		
-		if (args.length!=3)	{System.exit(0); }
+		if (args.length!=3)	{System.exit(1); }
 		
 		Translation Trobj = new Translation(); 
 

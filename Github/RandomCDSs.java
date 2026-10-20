@@ -41,24 +41,24 @@ public static void main(String args[])
 		if (nCodons<100) 
 		{
 			System.out.println("The number of Codons should be greater than 100.");
-			System.exit(0);
+			System.exit(1);
 		}
 		if (nCodons>500) 
 		{
 			System.out.println("Warning: If you are using the MSA program to align the translations, the number of Codons should be smaller than or equals to 500, otherwise the MSA program will cause an error in aligning them.");
-			System.exit(0);
+			System.exit(1);
 		}
 		System.out.println("The number of Codons for each CDS: "+nCodons);
 
 		if (TotalSeq<10) 
 		{
 			System.out.println("The number of sequences should be greater than 10.");
-			System.exit(0);
+			System.exit(1);
 		}
 		if (TotalSeq>100000) 
 		{
 			System.out.println("Too many sequences.The number of sequences should be smaller than or equals to 100000.");
-			System.exit(0);
+			System.exit(1);
 		}
 		
 		String[] sName= new String[100001];
