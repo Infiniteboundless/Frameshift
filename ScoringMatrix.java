@@ -1,6 +1,6 @@
 /*
 ==============================================================
-sMat.java version 2.1.001 
+ScoringMatrix.java version 2.1.001 
 
 This program contains two functions, "translate" and "translateReadthrough", which are called by other programs to Reading the amino acid substitution scoring matrices in file ./Matrix/Matrices.txt. Call it by:
 
@@ -16,8 +16,10 @@ int [][][] sMat=new int[100][22][22]; //The scores of the scoring matrices
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { eb3519d0 ScoringMatrix
 public class ScoringMatrix
 {
+// GRENZEN { 12ff9921 ScoringMatrix.readMatrix
 public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) throws Exception 
 {
 	
@@ -41,7 +43,7 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 	if(!MatrixFile.exists())
 	{
 		System.out.println("\n The amino acid substitution scoring matrices file <./Matrix/Matrices.txt> is missing!"); 
-		System.exit(0); 		
+		throw new java.io.IOException("ScoringMatrix.readMatrix: file missing, wrong format, too many, or empty");
 	}
 	
 	
@@ -54,7 +56,7 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 	{
 		System.out.println("\n Wrong matrices file!\n"); 
 		System.out.println("\n The first line must be annotated with: \n#Amino acid substitution scoring matrices \n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("ScoringMatrix.readMatrix: file missing, wrong format, too many, or empty");
 	}
 		
 	System.out.println("\n Reading the amino acid substitution scoring matrices in file" + matrixFile + " \n"); 
@@ -79,7 +81,7 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 				{
 					System.out.println("\n Too many scoring matrices found!\n"); 
 					System.out.println("\n The number of scoring matrices cannot greater than 100.\n"); 
-					System.exit(0); 					
+					throw new java.io.IOException("ScoringMatrix.readMatrix: file missing, wrong format, too many, or empty");
 				}
 				M[nSM]=rec.substring(2,rec.length()); 
 				//System.out.print("M="+ M[nSM]+ " \n"); 
@@ -116,7 +118,7 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 	if (nSM==0)
 	{
 		System.out.println("\nWrong matrices file! No amino acid substitution scoring matrices found!"); 
-		System.exit(0); 		
+		throw new java.io.IOException("ScoringMatrix.readMatrix: file missing, wrong format, too many, or empty");
 	}
 	
 	System.out.println("Number of scoring matrix read: "+nSM); 
@@ -153,7 +155,9 @@ public static int readMatrix(String [] M, String [] allAAs, int [][][] sMat) thr
 	
 	return nSM; 
 }
+// } GRENZEN 12ff9921
 }
+// } GRENZEN eb3519d0
  /*
 ==============================================================
 This software is released under GNU/GPL license

@@ -6,8 +6,10 @@ ShiftCodons.java version 2.2.001
 
 import java.io.*;
 import java.util.*;
+// GRENZEN { 1d146b44 ShiftCodons
 public class ShiftCodons
 {
+// GRENZEN { 0a177bd0 ShiftCodons.main
 public static void main(String[] args)
 {
 try
@@ -31,7 +33,7 @@ try
 	if (S<1||S>3)
 	{
 		System.out.println("Input is illegal: "+args[0]);
-		System.exit(0); 
+		System.exit(1); 
 	 }
 	
 	//Reading the amino acid substitution scoring matrices in file ./Matrix/Matrices.txt
@@ -507,10 +509,13 @@ try
 	{
 		System.out.println(e);
 		e.printStackTrace();
+		System.exit(1);
 		}
 	}
+// } GRENZEN 0a177bd0
 
 }
+// } GRENZEN 1d146b44
 /*
 ==============================================================
 This software is released under GNU/GPL license

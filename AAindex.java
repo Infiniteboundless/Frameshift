@@ -7,9 +7,11 @@ AAindex.java version 6.0.001
 import java.io.*; 
 import java.util.*; 
 
+// GRENZEN { 310c4e8e AAindex
 public class AAindex
 {
 	
+// GRENZEN { f4f0fb10 AAindex.readAAidx
 public static void readAAidx(double [][] M, String [] D, String [] E, String AAs) throws Exception 
 {
 	String record; 
@@ -26,7 +28,7 @@ public static void readAAidx(double [][] M, String [] D, String [] E, String AAs
 	if(!idxFile.exists())
 	{
 		System.out.println("\n The amino acid properties file ./Matrix/aaindex1.txt is not found!"); 
-		System.exit(0); 		
+		throw new java.io.IOException("AAindex.readAAidx: file not found or wrong format");
 	}
 	
 	FileReader fr = new FileReader(idxFile); 
@@ -39,7 +41,7 @@ public static void readAAidx(double [][] M, String [] D, String [] E, String AAs
 	{
 		System.out.println("\n Wrong amino acid properties file!\n"); 
 		System.out.println("\n The first line must be \"H ANDN920101\" \n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidx: file not found or wrong format");
 	}
 	
 	System.out.println("\n Reading the amino acid properties in file: " + idxFile + " \n"); 
@@ -163,7 +165,9 @@ public static void readAAidx(double [][] M, String [] D, String [] E, String AAs
 	
 	fr.close(); 
 }
+// } GRENZEN f4f0fb10
 
+// GRENZEN { f43d7684 AAindex.uniformFakeAAidx
 public static void uniformFakeAAidx(double [][] M, String [] D, String [] E, String AAs) throws Exception 
 {
 //Produce random fake AA index using uniform distribution
@@ -183,7 +187,9 @@ public static void uniformFakeAAidx(double [][] M, String [] D, String [] E, Str
 		M [s][20]=0.0;
 	}	
 }
+// } GRENZEN f43d7684
 
+// GRENZEN { 91498292 AAindex.normalFakeAAidx
 public static void normalFakeAAidx(double [][] M, String [] D, String [] E, String AAs) throws Exception 
 {
 //Produce random fake AA index using normal distribution
@@ -205,7 +211,9 @@ public static void normalFakeAAidx(double [][] M, String [] D, String [] E, Stri
 	
 	}
 }
+// } GRENZEN 91498292
 
+// GRENZEN { 61ace636 AAindex.saveAAidxFile
 public static void saveAAidxFile(String OutputAAidxFile, double [][] M, String [] D, String [] E, String AAs) throws Exception 
 {		
 	BufferedWriter bwMSfile = new BufferedWriter(new FileWriter(OutputAAidxFile));
@@ -250,7 +258,9 @@ public static void saveAAidxFile(String OutputAAidxFile, double [][] M, String [
 	
 	bwMSfile.close(); 	
 }
+// } GRENZEN 61ace636
 
+// GRENZEN { 73853b4d AAindex.readAAidxTable
 public static void readAAidxTable(String idxFileName, double [][] M, String [] D, String [] E, String AAs) throws Exception 
 {
 	String record; 
@@ -262,7 +272,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 	if(!idxFile.exists())
 	{
 		System.out.println("\n The AA properties file is not found: "+idxFileName); 
-		System.exit(0); 		
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 	
 	FileReader fr = new FileReader(idxFile); 
@@ -275,7 +285,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 		System.out.println("\n Wrong AA properties file: "+idxFileName); 
 		System.out.println("\n The first line must be \"AAs:ARNDCQEGHILKMFPSTWYV*\""); 
 		System.out.println("\n Please check the amino acid  properties file!\n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 	
 	record = br.readLine(); 
@@ -285,7 +295,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 		System.out.println("\n Wrong AA properties file: "+idxFileName); 
 		System.out.println("\n The second line must be \"No	Accesion	A	R	N	D	C	Q	E	G	H	I	L	K	M	F	P	S	T	W	Y	V	Description\""); 
 		System.out.println("\n Please check the amino acid  properties file!\n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 		
 	System.out.println("\n Reading the amino acid properties in file: " + idxFile + " \n");
@@ -335,7 +345,9 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 	fr.close(); 
 			
 }
+// } GRENZEN 73853b4d
 
+// GRENZEN { 2e038c78 AAindex.isNumber
 public static boolean isNumber(String inputString) 
 {
 	try 
@@ -349,7 +361,9 @@ public static boolean isNumber(String inputString)
 		return false;
 	}
 }
+// } GRENZEN 2e038c78
 }
+// } GRENZEN 310c4e8e
 
  /*
 ==============================================================

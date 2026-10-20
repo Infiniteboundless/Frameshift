@@ -7,8 +7,10 @@ CodonUsage.java version 2.1.001
 import java.io.*;
 //import java.util.*;
 
+// GRENZEN { 57341f28 CodonUsage
 public class CodonUsage
 {
+// GRENZEN { 274b175b CodonUsage.main
 	public static void main(String args[])
 	{
 	try
@@ -146,7 +148,9 @@ public class CodonUsage
 			e.printStackTrace();
 		}
 	}
+// } GRENZEN 274b175b
 }
+// } GRENZEN 57341f28
 /*
 ==============================================================
 This software is released under GNU/GPL license

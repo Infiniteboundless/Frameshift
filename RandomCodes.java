@@ -6,8 +6,10 @@ RandomCodes.java version 2.1.001
 
 import java.util.ArrayList;
 import java.util.List;
+// GRENZEN { 51b8ff7c RandomCodes
 public class RandomCodes{
 
+// GRENZEN { 22c638b3 RandomCodes.main
 public static void main(String[] args) throws Exception
 {
 	System.out.println("\n Produce random genetic codes and compute their Frameshift substitution scores, FSSs\n "); 
@@ -42,7 +44,7 @@ public static void main(String[] args) throws Exception
 	if (args.length<4||N<1||N>10000000||S>nSM||S<1||R<1||R>10000)
 	{
 		System.out.println("\n Wrong parameter!"); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	System.out.println("Using scoring matrix "+S+": "+M[S]);
@@ -273,7 +275,9 @@ public static void main(String[] args) throws Exception
 	} 
 	
 }//End of main
+// } GRENZEN 22c638b3
 
+// GRENZEN { 373831ca RandomCodes.AlternativeTranslate
 public static String AlternativeTranslate(String codon1, String codons[],String AA[])
 {
 	String amino="*";
@@ -296,7 +300,9 @@ public static String AlternativeTranslate(String codon1, String codons[],String 
 	}
 	return amino;
 }
+// } GRENZEN 373831ca
 }
+// } GRENZEN 51b8ff7c
 
 /*
 ==============================================================

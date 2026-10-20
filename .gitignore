@@ -1,0 +1,14 @@
+# Frameshift -- source-only tracking (root layout)
+/*
+!/.gitignore
+!/*.java
+!/README.md
+!/Commands.sh
+!/REPORT_P0.md
+!/Github/
+/Github/*
+!/Github/backup/
+/Github/backup/*
+!/AminoCode.py
+!/AnimonCode.py
+!/AnimonCode-1.py

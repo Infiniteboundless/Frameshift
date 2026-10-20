@@ -7,15 +7,17 @@ Similarity.java version 2.1.001
 import java.io.*; 
 //import java.util.*; 
 
+// GRENZEN { 2a2720aa Similarity
 public class Similarity
 {
+// GRENZEN { 8c56d925 Similarity.main
 public static void main(String args[])
 {
 	try
 	{
 		System.out.println("\n Batch translate CDSs in the three different reading frames in the sense strand, and compute their frameshift or random similarities, by aligning or not.\n"); 
-		System.out.println("\n Usage: Similarity <Path> <CDS file> <[readthrough=]Yes/No> <[SeqType=]Frameshift/Random> <CLUSTALW/MSA/No> \n"); 
-		if (args.length!=5)	{System.exit(0); }
+		System.out.println("\n Usage: Similarity <Path> <CDS file> <[readthrough=]Yes/No> <[SeqType=]Frameshift/Random> <CLUSTALW/MSA/FrameAlign/No> \n"); 
+		if (args.length!=5)	{System.exit(1); }
 		
 		Translation Trobj = new Translation(); 
 
@@ -77,7 +79,7 @@ public static void main(String args[])
 		else
 		{
 			System.out.println("\n Wrong args input: "+SeqType); 
-			System.exit(0); 
+			System.exit(1); 
 		}
 
 	 	String SimilarityFile = path + "/" + CDSfile + "." + ReadThrough + "." + Aligner+"."+SeqType+".Similarities.txt"; 
@@ -311,7 +313,7 @@ public static void main(String args[])
 				else 
 				{
 					System.err.println("\n Clustalw Alignment ERROR! (Error Number:" + exitCode+")\n"); 
-					System.exit(0); 
+					System.exit(1); 
 				}
 		
 			}
@@ -751,13 +753,17 @@ public static void main(String args[])
 		e.printStackTrace(); 
 	}
 }
+// } GRENZEN 8c56d925
 	
+// GRENZEN { ab67defc Similarity.countOf
 public static int countOf (String s, String c) 
 {
  return (s.length() - s.replace(c, "").length()); 
 }
+// } GRENZEN ab67defc
 
 }
+// } GRENZEN 2a2720aa
 /*
  ==============================================================
 This software is released under GNU/GPL license
@@ -768,6 +774,6 @@ Xiaolong Wang* @ Ocean University of China
 
 email: xiaolong@ouc.edu.cn
 website: http://www.DNAplusPro.com
- ================================================================
+================================================================
 
 */

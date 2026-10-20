@@ -18,10 +18,12 @@ To calculate R from 1 to n, use the code in line 35 instead of line 36:
 import java.io.*; 
 import java.util.*; 
 
+// GRENZEN { 96b38d6c Pearson
 public class Pearson
 {
 // get Pearson's correlation coefficients
 	 
+// GRENZEN { 43679d4d Pearson.getCorrelation
 public static double getCorrelation(double[] x, double[] y) 
 {
 	double meanX = 0.0;
@@ -64,8 +66,10 @@ public static double getCorrelation(double[] x, double[] y)
 	return R;
 	
 } //End of getCorrelation
+// } GRENZEN 43679d4d
 
 }
+// } GRENZEN 96b38d6c
  /*
 ==============================================================
 This software is released under GNU/GPL license

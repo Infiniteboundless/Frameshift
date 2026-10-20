@@ -6,8 +6,10 @@ AlternativeCodes.java version 3.0.001
 
 import java.io.*;
 
+// GRENZEN { c95d764e AlternativeCodes
 public class AlternativeCodes{
 
+// GRENZEN { 22c84d0b AlternativeCodes.main
 public static void main(String[] args) throws Exception 
 {
 	
@@ -286,7 +288,9 @@ public static void main(String[] args) throws Exception
 	}
 
 }
+// } GRENZEN 22c84d0b
 	
+// GRENZEN { 3b5e6b84 AlternativeCodes.AlternativeTranslate
 	public static String AlternativeTranslate(String codon1, String codon[],String aa[])
 	{
 		String amino="-";
@@ -302,7 +306,9 @@ public static void main(String[] args) throws Exception
 		}
 		return amino;
 	 }
+// } GRENZEN 3b5e6b84
 }
+// } GRENZEN c95d764e
 
 /*
 ==============================================================

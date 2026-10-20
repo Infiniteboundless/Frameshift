@@ -19,6 +19,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit; 
 import static java.util.Arrays.asList; 
 
+// GRENZEN { 83fb7606 MsGeneticCode
 public class MsGeneticCode
 {
 	public static int cType = 0; //Code Type	
@@ -64,6 +65,7 @@ public class MsGeneticCode
 	public static long Time1; //Last time
 	public static long Time2; //Current time
 
+// GRENZEN { 8ea566a3 MsGeneticCode.main
 public static void main(String[] args) throws Exception
 {
 	Time0 = System.currentTimeMillis();
@@ -77,7 +79,7 @@ public static void main(String[] args) throws Exception
 	if (args.length != 6)
 	{
 		System.out.println("\n\t Input error! "); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	args[0] = args[0].toLowerCase().replace("real", "1").replace("uniform", "2").replace("normal", "3"); 
@@ -127,7 +129,7 @@ public static void main(String[] args) throws Exception
 	if (dType <1||dType>3||nRept <1||nRept>100||nCode <100||nCode>10000000||nSwap <1||nSwap>1000||Start <1||Start>nAP||End <1||End>nAP||Start>End)
 	{
 		System.out.println("\n\t Input error! "); 
-		System.exit(0); 
+		System.exit(1); 
 	}
 	
 	System.out.println("\n\t Parameters accepted: "); 
@@ -366,7 +368,7 @@ public static void main(String[] args) throws Exception
 		{
 			System.out.println("\n\t Program exit because there are too many tasks.\n\t Please change the inputs to reduce the number of tasks to less than 60000 tasks.\n Otherwise, the computation time may be too long (up to months)."); 
 			
-			System.exit(0); 			
+			System.exit(1); 			
 		}
 										
 		//===================================================================
@@ -598,16 +600,21 @@ public static void main(String[] args) throws Exception
 	System.out.println("\n\n\t ALL tasks finished. \n"); 
 	
 }//End of main
+// } GRENZEN 8ea566a3
 
+// GRENZEN { 949e67d4 MsGeneticCode.getCodes
 public static class getCodes implements Callable <Boolean>
 {
 	private final int r; // No. of repeat 
 	
+// GRENZEN { 9fd6587b MsGeneticCode.getCodes.getCodes
 	getCodes(int r) 
 	{
 		this.r = r; 
 	}
+// } GRENZEN 9fd6587b
 			
+// GRENZEN { 3d59a1cb MsGeneticCode.getCodes.call
 	@Override
 	public Boolean call() throws Exception 
 	{									
@@ -754,17 +761,23 @@ public static class getCodes implements Callable <Boolean>
 		return true; 
 		
 	} //End of Call()
+// } GRENZEN 3d59a1cb
 } //End of getCodes()
+// } GRENZEN 949e67d4
 
+// GRENZEN { f5dcfe6f MsGeneticCode.countCodons
 public static class countCodons implements Callable <Boolean>
 {
 	private final int r; // No. of repeat 
 	
+// GRENZEN { 9af88fd8 MsGeneticCode.countCodons.countCodons
 	countCodons(int r) 
 	{
 		this.r = r; 
 	}
+// } GRENZEN 9af88fd8
 			
+// GRENZEN { 41f4b65f MsGeneticCode.countCodons.call
 	@Override
 	public Boolean call() throws Exception 
 	{							
@@ -908,20 +921,26 @@ public static class countCodons implements Callable <Boolean>
 		return true; 
 		
 	} //End of Call()
+// } GRENZEN 41f4b65f
 	
 }//End of countCodons()
+// } GRENZEN f5dcfe6f
 
+// GRENZEN { a7d2110b MsGeneticCode.MrGeneticCode
 public static class MrGeneticCode implements Callable <Boolean>
 {
 	private final int s; // Counter of the AA properties
 	private final int r; // No. of repeat 
 	
+// GRENZEN { a491143f MsGeneticCode.MrGeneticCode.MrGeneticCode
 	MrGeneticCode(int s, int r) 
 	{
 		this.s = s; 
 		this.r = r; 
 	}
+// } GRENZEN a491143f
 			
+// GRENZEN { f67e726f MsGeneticCode.MrGeneticCode.call
 	@Override
 	public Boolean call() throws Exception 
 	{					
@@ -1069,20 +1088,26 @@ public static class MrGeneticCode implements Callable <Boolean>
 		return true; 
 		
 	}//End of call()
+// } GRENZEN f67e726f
 	
 } //End of MrGeneticCode()
+// } GRENZEN a7d2110b
 		
+// GRENZEN { 692b2cd8 MsGeneticCode.DrGeneticCode
 public static class DrGeneticCode implements Callable <Boolean>
 {
 	private final int s; // Counter of the AA properties
 	private final int r; // No. of repeat 
 	
+// GRENZEN { 962e7378 MsGeneticCode.DrGeneticCode.DrGeneticCode
 	DrGeneticCode(int s, int r) 
 	{
 		this.s = s; 
 		this.r = r; 
 	}
+// } GRENZEN 962e7378
 			
+// GRENZEN { 6e608933 MsGeneticCode.DrGeneticCode.call
 	@Override
 	public Boolean call() throws Exception 
 	{					
@@ -1169,9 +1194,12 @@ public static class DrGeneticCode implements Callable <Boolean>
 		return true; 
 		
 	}//End of call()
+// } GRENZEN 6e608933
 	
 } //End of DrGeneticCode()
+// } GRENZEN 692b2cd8
 
+// GRENZEN { afaf7912 MsGeneticCode.getSGC
 public static void getSGC(int r) throws Exception
 {
 	// get the standard genetic code using Standard Translation, then change AAs but keep CODONs unchanged using getCodes()
@@ -1200,7 +1228,9 @@ public static void getSGC(int r) throws Exception
 	}			
 	
 }//End of getSGC
+// } GRENZEN afaf7912
 
+// GRENZEN { 05e37d08 MsGeneticCode.nucleotidePermutation
 //Produce NtPermute genetic codes by permutation
 public static void nucleotidePermutation() throws Exception
 {
@@ -1320,7 +1350,9 @@ public static void nucleotidePermutation() throws Exception
 		}
 	}	
 }
+// } GRENZEN 05e37d08
 
+// GRENZEN { 30a8ec7d MsGeneticCode.AlternativeTranslate
 public static int AlternativeTranslate(String codon1, String CODON[], int AA[])
 {
 	int AminoAcid = -1; 
@@ -1345,9 +1377,11 @@ public static int AlternativeTranslate(String codon1, String CODON[], int AA[])
 	return AminoAcid; 
 	
 } //End of AlternativeTranslate
+// } GRENZEN 30a8ec7d
 
 // Output R, Pf and Pm values for each AA property 
 
+// GRENZEN { b0e2b34b MsGeneticCode.writePf
 public static void writePf() throws Exception
 {	
 	File directory = new File(""); 
@@ -1406,7 +1440,9 @@ public static void writePf() throws Exception
 	bwPf.close(); 
 
 }
+// } GRENZEN b0e2b34b
 
+// GRENZEN { e84b672a MsGeneticCode.writeMS
 // Output all MSf[r][s][0-3] and MSm[r][s-3] values for each AA property for each code
 public static void writeMS() throws Exception
 {
@@ -1460,7 +1496,9 @@ public static void writeMS() throws Exception
 		if(cType == 0) break; // do not repeat NtPermute because their repeats are indentical
 	}		
 }
+// } GRENZEN e84b672a
 
+// GRENZEN { d6f132b6 MsGeneticCode.writefm
 // Output all MSf[r][s][0-3] and MSm[r][s-3] values for each AA property for each code
 public static void writefm() throws Exception
 {
@@ -1511,7 +1549,9 @@ public static void writefm() throws Exception
 		if(cType == 0) break; // do not repeat NtPermute because their repeats are indentical
 	}	
 }
+// } GRENZEN d6f132b6
 
+// GRENZEN { b2eeba33 MsGeneticCode.checkTime
 public static void checkTime()
 {
 	Time2 = System.currentTimeMillis();
@@ -1536,7 +1576,9 @@ public static void checkTime()
 	
 	Time1=Time2;
 }
+// } GRENZEN b2eeba33
 	 
+// GRENZEN { a4ec5b30 MsGeneticCode.InputHelp
 public static void InputHelp()
 {
 	System.out.println("\n    This program produces nt-permute, aa-permute, shuffle, and random genetic codes, calculate the mean square differences (MSm and MSf) for real or fake AA properties upon mismatching/frameshifting,  the Pearson correlation coefficients between MSm and MSf, and the probability of mismatch/frameshift optimality (Pm and Pf) of the standard genetic code (SGC). \n"); 
@@ -1562,15 +1604,19 @@ public static void InputHelp()
 	System.out.println("\n\t D=3: Fake AA properties are simulated by random numbers with normal distribution. "); 
 	
 } //End of InputHelp
+// } GRENZEN a4ec5b30
 
+// GRENZEN { bfa27a4b MsGeneticCode.repeatStr
 public static String repeatStr(String strIn, int numRepeats)
 {
 	String strOut = strIn; 
 	for (int i = 1; i <= numRepeats; i++)  strOut+= strIn; 
 	return strOut; 
 }
+// } GRENZEN bfa27a4b
 
 } //End of Class 
+// } GRENZEN 83fb7606
 
 /*
  ============================================================== 
