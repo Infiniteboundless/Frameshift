@@ -28,7 +28,7 @@ public static void readAAidx(double [][] M, String [] D, String [] E, String AAs
 	if(!idxFile.exists())
 	{
 		System.out.println("\n The amino acid properties file ./Matrix/aaindex1.txt is not found!"); 
-		System.exit(0); 		
+		throw new java.io.IOException("AAindex.readAAidx: file not found or wrong format");
 	}
 	
 	FileReader fr = new FileReader(idxFile); 
@@ -41,7 +41,7 @@ public static void readAAidx(double [][] M, String [] D, String [] E, String AAs
 	{
 		System.out.println("\n Wrong amino acid properties file!\n"); 
 		System.out.println("\n The first line must be \"H ANDN920101\" \n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidx: file not found or wrong format");
 	}
 	
 	System.out.println("\n Reading the amino acid properties in file: " + idxFile + " \n"); 
@@ -272,7 +272,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 	if(!idxFile.exists())
 	{
 		System.out.println("\n The AA properties file is not found: "+idxFileName); 
-		System.exit(0); 		
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 	
 	FileReader fr = new FileReader(idxFile); 
@@ -285,7 +285,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 		System.out.println("\n Wrong AA properties file: "+idxFileName); 
 		System.out.println("\n The first line must be \"AAs:ARNDCQEGHILKMFPSTWYV*\""); 
 		System.out.println("\n Please check the amino acid  properties file!\n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 	
 	record = br.readLine(); 
@@ -295,7 +295,7 @@ public static void readAAidxTable(String idxFileName, double [][] M, String [] D
 		System.out.println("\n Wrong AA properties file: "+idxFileName); 
 		System.out.println("\n The second line must be \"No	Accesion	A	R	N	D	C	Q	E	G	H	I	L	K	M	F	P	S	T	W	Y	V	Description\""); 
 		System.out.println("\n Please check the amino acid  properties file!\n"); 
-		System.exit(0); 					
+		throw new java.io.IOException("AAindex.readAAidxTable: file not found or wrong format");
 	}
 		
 	System.out.println("\n Reading the amino acid properties in file: " + idxFile + " \n");

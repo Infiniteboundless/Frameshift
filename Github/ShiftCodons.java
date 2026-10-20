@@ -33,7 +33,7 @@ try
 	if (S<1||S>3)
 	{
 		System.out.println("Input is illegal: "+args[0]);
-		System.exit(0); 
+		System.exit(1); 
 	 }
 	
 	//Reading the amino acid substitution scoring matrices in file ./Matrix/Matrices.txt
@@ -509,6 +509,7 @@ try
 	{
 		System.out.println(e);
 		e.printStackTrace();
+		System.exit(1);
 		}
 	}
 // } GRENZEN 0a177bd0
